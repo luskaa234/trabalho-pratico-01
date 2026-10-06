@@ -1,0 +1,39 @@
+classDiagram
+    class Escola {
+        +nome
+        +endereco
+        +cnpj
+        +adicionar_sala()
+        +remover_sala()
+    }
+    class SalaAula {
+        +numero
+        +capacidade
+        +andar
+        +reservar()
+        +liberar()
+    }
+    class Professor {
+        +nome
+        +matricula
+        +especialidade
+        +lecionar()
+        +atualizar_dados()
+    }
+    class Aluno {
+        +nome
+        +matricula
+        +curso
+        +matricular()
+        +atualizar_dados()
+    }
+    class Endereco {
+        +logradouro
+        +numero
+        +cidade
+        +atualizar()
+        +exibir_endereco()
+    }
+    Escola *-- SalaAula : composição
+    Escola -- Professor : associação
+    Aluno o-- Endereco : agregação
